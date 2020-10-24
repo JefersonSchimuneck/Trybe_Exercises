@@ -1,0 +1,42 @@
+Git Commands
+
+
+Fluxo 1 (para iniciar novo git)
+
+git init
+git status
+git add . (adiciona todos os arquivos da branch)
+git add meu_arquivo.js (adiciona arquivo específico)
+git commit -m "Mensagem sobre a alteração feita" (commita todos os arquivos do add)
+git remote add origin git@github.com:user-github/repo-name.git
+git remote set-url origin url (mudar url do repositório)
+git push -u origin master (pull request) **primeiro commit** -u marca a branch de upstream
+git pull (similar ao fetch, primeiro ele executa um "fetch", e depois faz um merge com o branch local) Puxa as mudanças da branch remota para a branch local.
+
+
+
+Fluxo 2 (ao clonar repositórios)
+
+git clone url (clona todo o repositorio remoto, diferente do pull que puxa apenas as mudanças)
+git checkout -b novaBranch (cria nova branch e já muda para ela)
+git commit / git push
+
+
+
+Outros comandos
+
+git remote rm origin (remove ?)
+git remote -v (mostra a lista dos remotes)
+git fetch origin (vai para o GitHub, pega os status das branches e atualiza as informações dos nossos branches remotos) mostra o que tem de diferente, o pull é mais utilizado
+git branch (mostra branch local)
+git branch -r (mostra a brach do repositorio remoto)
+git branch nome (cria uma nova branch com o "nome)
+git checkout nomeBranch (mudar de uma branch para a nomeBranch)
+git branch –set-upstream-to=origin/master (confiurar branch de upstream caso não tenha no primeiro push)
+git log (histórico de commits)
+git log --diff-filter=D --summary (o que tem de diferente e vou filtrar log com status Deletados, exibidos na forma de sumário)
+git checkout 1234~ 1 ((4 primeiros números do log) ~(ok) 1(passa a valer de fato))
+git rm arquivo (remove arquivos do git)
+touch .gitignore (. pra sinalizar que é um arquivo oculto)
+cat > .gitignore (editar o arquivo com as restrições por exemplo *.txt, irá ignorar todos os arquivos com esta extensão ou pode mencionar arquivos isolados, ou diretórios/ colocar barra no final pra especificar que é um diretório)
+Arquivos ignore padrão toptoal.com/developers/gitignore (site)
