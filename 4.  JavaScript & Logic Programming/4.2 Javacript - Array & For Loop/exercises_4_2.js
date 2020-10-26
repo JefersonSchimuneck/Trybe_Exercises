@@ -36,6 +36,18 @@ for (let index = 0; index < numbers.length; index +=1 ) {
         highestNumber = numbers[index];
     }
 }
-
 console.log(`5. O maior número do array é ${highestNumber}.`)
 console.log("")
+
+//6
+let oddNumbers = 0;
+for (let index = 0; index < numbers.length; index +=1 ) {
+    if (numbers[index] % 2 != 0){
+        oddNumbers +=1;
+    }
+}
+if (oddNumbers > 0) {
+    console.log(`6. Existem ${oddNumbers} números ímpares no array`)
+} else {
+    console.log(`6. Nenhum número ímpar encontrado no array`)
+}
