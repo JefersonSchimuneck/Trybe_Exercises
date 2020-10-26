@@ -15,3 +15,8 @@ for (let index = 0; index < numbers.length; index +=1 ) {
 }
 console.log(`2. A soma dos elementos do array resulta em ${sum}`)
 console.log("")
+
+//3
+let average = sum / numbers.length;
+console.log(`3. A média aritmética dos elementos do array resulta em ${average}`)
+console.log("")
