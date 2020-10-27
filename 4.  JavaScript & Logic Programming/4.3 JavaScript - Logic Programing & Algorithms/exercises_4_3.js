@@ -18,3 +18,19 @@ for (let indexLine = 0; indexLine < n; indexLine +=1) {
     console.log(asteriskLine);
 }
 console.log();
+
+//3- Agora inverta o lado do triângulo
+console.log("3.");
+let c = 1;
+for (let indexLine = 0; indexLine < n; indexLine +=1) {
+    asteriskLine = "";
+    for (let indexSpace = n-c; indexSpace >= 0; indexSpace -=1) {
+            asteriskLine += " ";
+    }
+    for (let indexAsterix = n+c; indexAsterix > n; indexAsterix -=1) {
+        asteriskLine += "*";    
+    }
+    console.log(asteriskLine);
+    c += 1;
+}
+console.log();
