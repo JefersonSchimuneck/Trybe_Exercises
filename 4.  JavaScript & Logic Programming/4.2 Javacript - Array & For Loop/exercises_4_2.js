@@ -64,3 +64,8 @@ console.log(`7. The lowest number in the array is ${lowestNumber}.`)
 console.log("")
 
 //8
+let newArray = [];
+for (let index = 1; index <= 25; index +=1 ) {
+    newArray.push(index)
+}
+console.log(`8. New Array: [${newArray}]`)
