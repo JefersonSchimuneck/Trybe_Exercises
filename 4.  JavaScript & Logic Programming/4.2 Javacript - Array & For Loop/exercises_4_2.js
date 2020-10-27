@@ -2,7 +2,6 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 //1
 console.log("1. The elements of the array are:")
-console.log("")
 for (let index = 0; index < numbers.length; index +=1 ) {
     console.log(numbers[index]);
 }
@@ -69,3 +68,10 @@ for (let index = 1; index <= 25; index +=1 ) {
     newArray.push(index)
 }
 console.log(`8. New Array: [${newArray}]`)
+console.log("")
+
+//9
+console.log("9. The elements of the previous array, when divided by 2, are as follows:")
+for (index = 0; index < newArray.length; index +=1){
+    console.log(`${newArray[index] / 2}`)
+}
