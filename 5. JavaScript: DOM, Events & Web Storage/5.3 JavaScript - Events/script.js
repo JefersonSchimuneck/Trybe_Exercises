@@ -171,7 +171,6 @@ function createTask(task) {
 let taskCreated = "Projeto";
 createTask(taskCreated);
 
-
 // Exercício 8:
 // Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de tag <div> com a classe task.
 // O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
@@ -204,24 +203,24 @@ interactTask.addEventListener("click", function () {
 // Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119).
 let taskButton = document.querySelector(".task");
 for (let index = 0; index < daysList.length; index += 1) {
-daysList[index].addEventListener("click", function () {
-  if (taskButton.className == "task selected") {
-    if (daysList[index].style.color == taskColor) {
-      daysList[index].style.color = "rgb(119,119,119)";
-    } else {
-      daysList[index].style.color = taskColor;
-    }
-  } else {
-    function resetColor() {
-      for (let index = 0; index < daysList.length; index += 1) {
-      daysList[index].style.color = "rgb(119,119,119)";
+  daysList[index].addEventListener("click", function () {
+    if (taskButton.className == "task selected") {
+      if (daysList[index].style.color == taskColor) {
+        daysList[index].style.color = "rgb(119,119,119)";
+      } else {
+        daysList[index].style.color = taskColor;
       }
+    } else {
+      function resetColor() {
+        for (let index = 0; index < daysList.length; index += 1) {
+          daysList[index].style.color = "rgb(119,119,119)";
+        }
+      }
+      interactTask.addEventListener("click", function () {
+        resetColor();
+      });
     }
-    interactTask.addEventListener("click", function () {
-      resetColor();
-    });
-  }
-});
+  });
 }
 
 // Bônus:
@@ -230,4 +229,26 @@ daysList[index].addEventListener("click", function () {
 // Ao pressionar a tecla "enter" o evento também deverá ser disparado.
 // Dica - Propriedade: keyCode.
 
+let addButton = document.getElementById("btn-add");
+let inputText = document.getElementById("task-input");
 
+addButton.addEventListener("click", function () {
+  addCommitment();
+});
+
+inputText.addEventListener("keypress", function (press) {
+  if (press.key === "Enter") {
+    addCommitment();
+  }
+});
+
+function addCommitment() {
+  if (inputText.value.length == 0) {
+    alert("Preenchimento Obrigatório");
+  } else {
+    let newTask = document.createElement("li");
+    newTask.innerText = inputText.value;
+    document.querySelector(".task-list").appendChild(newTask);
+    inputText.value = "";
+  }
+}
