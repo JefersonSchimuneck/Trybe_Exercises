@@ -210,15 +210,6 @@ for (let index = 0; index < daysList.length; index += 1) {
       } else {
         daysList[index].style.color = taskColor;
       }
-    } else {
-      function resetColor() {
-        for (let index = 0; index < daysList.length; index += 1) {
-          daysList[index].style.color = "rgb(119,119,119)";
-        }
-      }
-      interactTask.addEventListener("click", function () {
-        resetColor();
-      });
     }
   });
 }
