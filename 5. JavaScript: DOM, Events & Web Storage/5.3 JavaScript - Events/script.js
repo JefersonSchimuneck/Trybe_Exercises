@@ -162,3 +162,72 @@ for (let index = 0; index < daysList.length; index += 1) {
 // Exercício 7:
 // Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+function createTask(task) {
+  let taskName = document.createElement("span");
+  taskName.innerText = task;
+  document.querySelector(".my-tasks").appendChild(taskName);
+}
+
+let taskCreated = "Projeto";
+createTask(taskCreated);
+
+
+// Exercício 8:
+// Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de tag <div> com a classe task.
+// O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
+// O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+function createIcon(color) {
+  let iconCreated = document.createElement("div");
+  iconCreated.className = "task";
+  iconCreated.style.backgroundColor = color;
+  document.querySelector(".my-tasks").appendChild(iconCreated);
+}
+
+let taskColor = "blue";
+createIcon(taskColor);
+
+// Exercício 9:
+// Implemente uma função que adiciona um evento que ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected, ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada.
+// Ao clicar novamente no elemento a sua classe deverá voltar a ser somente task, ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+
+let interactTask = document.querySelector(".task");
+interactTask.addEventListener("click", function () {
+  if (interactTask.className == "task selected") {
+    interactTask.className = "task";
+  } else {
+    interactTask.className = "task selected";
+  }
+});
+
+// Exercício 10:
+// Implemente uma função que adiciona um evento que ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119).
+let taskButton = document.querySelector(".task");
+for (let index = 0; index < daysList.length; index += 1) {
+daysList[index].addEventListener("click", function () {
+  if (taskButton.className == "task selected") {
+    if (daysList[index].style.color == taskColor) {
+      daysList[index].style.color = "rgb(119,119,119)";
+    } else {
+      daysList[index].style.color = taskColor;
+    }
+  } else {
+    function resetColor() {
+      for (let index = 0; index < daysList.length; index += 1) {
+      daysList[index].style.color = "rgb(119,119,119)";
+      }
+    }
+    interactTask.addEventListener("click", function () {
+      resetColor();
+    });
+  }
+});
+}
+
+// Bônus:
+// Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+// Se nenhum caractere for inserido no campo input, a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+// Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+// Dica - Propriedade: keyCode.
+
+
