@@ -10,11 +10,64 @@
         <h1>Lorem Ipsum</h1>
         <h2>What is Lorem Ipsum?</h2>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
+        <input type="text" id="input-background" placeholder="background">
+        <input type="text" id="input-color" placeholder="color">
+        <input type="text" id="input-font-size" placeholder="font-size">
+        <input type="text" id="input-line-height" placeholder="line-height">
+        <input type="text" id="input-font-family" placeholder="font-family">
     </main>
+    <script>
+
+        window.onload = function() {
+            document.body.style.background = localStorage.getItem("background");
+            document.body.style.color = localStorage.getItem("color");
+            document.body.style.fontSize = localStorage.getItem("fontSize") + "px"; 
+            document.body.style.lineHeight = localStorage.getItem("lineHeight");
+            document.body.style.fontFamily = localStorage.getItem("fontFamily");
+        }
+        
+        let backgroundInput = document.getElementById("input-background");
+        let colorInput = document.getElementById("input-color");
+        let fontSizeInput = document.getElementById("input-font-size");
+        let lineHeightInput = document.getElementById("input-line-height");
+        let fontFamily = document.getElementById("input-font-family");
+        
+        backgroundInput.addEventListener ('keyup', function() {
+             let backgroundStorage = backgroundInput.value;
+             localStorage.setItem("background", backgroundStorage);
+             console.log((localStorage.getItem("background")));
+             document.body.style.background = localStorage.getItem("background"); 
+        });
+
+        colorInput.addEventListener ('keyup', function() {
+             let colorStorage = colorInput.value;
+             localStorage.setItem("color", colorStorage);
+             console.log((localStorage.getItem("color")));
+             document.body.style.color = localStorage.getItem("color"); 
+        });
+
+        fontSizeInput.addEventListener ('keyup', function() {
+             let fontSizeStorage = fontSizeInput.value;
+             localStorage.setItem("fontSize", fontSizeStorage);
+             console.log((localStorage.getItem("fontSize")));
+             document.body.style.fontSize = localStorage.getItem("fontSize") + "px"; 
+        });
+
+        lineHeightInput.addEventListener ('keyup', function() {
+             let lineHeightStorage = lineHeightInput.value;
+             localStorage.setItem("lineHeight", lineHeightStorage);
+             console.log((localStorage.getItem("lineHeight")));
+             document.body.style.lineHeight = localStorage.getItem("lineHeight"); 
+        });
+
+        fontFamily.addEventListener ('keyup', function() {
+             let fontFamilyStorage = fontFamily.value;
+             localStorage.setItem("fontFamily", fontFamilyStorage);
+             console.log((localStorage.getItem("fontFamily")));
+             document.body.style.fontFamily = localStorage.getItem("fontFamily"); 
+        });
+
+        
+    </script>
 </body>
 </html>
