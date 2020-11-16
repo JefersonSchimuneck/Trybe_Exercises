@@ -1,0 +1,183 @@
+/* https://flexboxfroggy.com/ */
+
+/* exercise 1 */
+#pond {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* exercise 2 */
+#pond {
+  display: flex;
+  justify-content: center;
+}
+
+/* exercise 3 */
+#pond {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* exercise 4 */
+#pond {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* exercise 5 */
+#pond {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* exercise 6 */
+#pond {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* exercise 7 */
+#pond {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/* exercise 8 */
+#pond {
+  display: flex;
+  flex-direction: row-reverse;
+}
+/* exercise 9 */
+#pond {
+  display: flex;
+  flex-direction: column;
+}
+
+/* exercise 10 */
+#pond {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* exercise 11 */
+#pond {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* exercise 12 */
+#pond {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+/* exercise 13 */
+#pond {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+/* http://www.flexboxdefense.com/ */
+
+/* exercise 1 */
+.tower-group-1 {
+  display: flex;
+  justify-content: center;
+}
+
+/* exercise 2 */
+.tower-group-1 {
+  display: flex;
+  justify-content: flex-end;
+}
+.tower-group-2 {
+  display: flex;
+  justify-content: center;
+}
+.tower-group-3 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* exercise 3 */
+.tower-group-1 {
+  display: flex;
+  justify-content: center;
+}
+.tower-group-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* exercise 4 */
+.tower-group-1 {
+  display: flex;
+  align-items: flex-end;
+}
+.tower-group-2 {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* exercise 5 */
+.tower-group-1 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.tower-group-2 {
+  display: flex;
+  justify-content: center;
+}
+.tower-group-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* exercise 6 */
+.tower-group-1 {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* exercise 7 */
+.tower-group-1 {
+  display: flex;
+  flex-direction: column;
+}
+.tower-group-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* exercise 8 */
+.tower-group-1 {
+  display: flex;
+  flex-direction: column;
+}
+.tower-group-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* exercise 9 */
+.tower-group-1 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+}
+.tower-group-2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+}
