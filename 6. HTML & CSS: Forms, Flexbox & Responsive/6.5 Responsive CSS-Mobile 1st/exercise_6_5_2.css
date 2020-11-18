@@ -1,0 +1,61 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 15px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+p {
+  font-size: 20px;
+}
+
+@media screen and (min-width: 450px) {
+  header p {
+    text-align: center;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  aside {
+    text-align: center;
+  }
+
+  body {
+    margin: 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  body {
+    margin: 30px;
+    max-width: 1000px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 35px;
+  }
+}
