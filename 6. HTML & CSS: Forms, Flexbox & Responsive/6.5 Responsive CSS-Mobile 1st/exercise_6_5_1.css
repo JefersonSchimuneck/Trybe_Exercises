@@ -1,0 +1,52 @@
+body {
+  margin: 18px;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+p {
+  font-size: 25px;
+}
+
+h2 {
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    background: cyan;
+    margin: 50px;
+  }
+
+  p {
+    font-size: 35px;
+  }
+
+  figure {
+    display: inline-block;
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    background: green;
+    margin: 80px;
+    max-width: 1000px;
+  }
+
+  p {
+    font-size: 45px;
+  }
+}
