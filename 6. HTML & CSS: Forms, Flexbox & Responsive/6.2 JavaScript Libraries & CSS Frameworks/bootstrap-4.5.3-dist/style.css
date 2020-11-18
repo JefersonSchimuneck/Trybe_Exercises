@@ -1,4 +1,36 @@
-/* body {
+h1 {
     width: 80%;
-    background:red;
-} */
+    text-align: center;
+}
+
+fieldset {
+    width: 60%;
+}
+
+.containerA input {
+    display: block;
+}
+
+.button-container {
+    width: 40%;
+    text-align: center;
+    margin: 10px;
+    margin: auto;
+}
+.main-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+form {
+    width: 45%;
+    border-right: 1px solid black;
+    margin: auto;
+}
+
+.resume {
+    width: 38%;
+    margin: auto;
+}

@@ -36,38 +36,14 @@ for (let index = 0; index < states.length; index += 1) {
   statesField.appendChild(newState);
 }
 
-// const startDate = document.getElementById("start-date");
-// function verifyDate() {
-//   startDate.addEventListener("change", function () {
-//     let date = startDate.value;
-//     if (date.length < 10) {
-//       console.log(date[3] + date[4]);
-//     } else if (date[0] + date[1] < 1 || date[0] + date[1] > 31) {
-//       console.log(date[0] + date[1]);
-//     } else if (date[3] + date[4] < 1 || date[3] + date[4] > 12) {
-//       console.log(date[3] + date[4]);
-//     } else if (date[6] + date[7] + date[8] + date[9] < 0) {
-//       console.log(date[6] + date[7] + date[8] + date[9]);
-//     } else if (date[2] != "/" || date[5] != "/") {
-//       alert("erro");
-//     }
-//   });
-// }
-// verifyDate();
-
 const submitButton = document.getElementById("submit");
 const inputFields = document.querySelectorAll("input");
 const resumeField = document.querySelector(".resume");
 
-submitButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  for (let index = 0; index < inputFields.length; index += 1) {
-    if (inputFields[index].type == "text") {
-      let printInfo = document.createElement("p");
-      printInfo.innerHTML =inputFields[index].name + " " + inputFields[index].value;
-      resumeField.appendChild(printInfo);
-    }
-  }
+new window.JustValidate('.js-form');
+
+submitButton.addEventListener("click", function () {
+  new window.JustValidate('.js-form');
 });
 
 const clearButton = document.getElementById("clear");
@@ -86,3 +62,6 @@ clearButton.addEventListener("click", function (event) {
  }
 
  document.getElementById('start-date').DatePickerX.init({format: 'dd/mm/yyyy'});
+ 
+//justvalidate
+ new window.JustValidate('.js-form');
