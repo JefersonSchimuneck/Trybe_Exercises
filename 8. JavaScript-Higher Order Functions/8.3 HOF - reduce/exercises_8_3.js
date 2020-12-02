@@ -86,11 +86,34 @@ const books = [
 assert.deepStrictEqual(allNames(), "Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.");
 
 //3 Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
-const expectedResult = 43;
+const expectedResultC = 43;
 
 function averageAge() {
   return books.reduce((accumulator, book) => (accumulator + (book.releaseYear - book.author.birthYear)), 0) / books.length;
 }
 
-assert.strictEqual(averageAge(), expectedResult);
+assert.strictEqual(averageAge(), expectedResultC);
+
+//4 Encontre o livro com o maior nome.
+const expectedResultD = {
+    author: {
+      birthYear: 1948,
+      name: 'George R. R. Martin'
+    },
+    genre: 'Fantasia',
+    id: 1,
+    name: 'As Crônicas de Gelo e Fogo',
+    releaseYear: 1991
+  };
+  
+  function longestNamedBook() {
+    return books.reduce((longestTitle, currentTitle) => {
+        if (longestTitle.name.length > currentTitle.name.length){
+            return longestTitle;
+        }
+        return currentTitle
+    })
+  }
+  
+  assert.deepStrictEqual(longestNamedBook(), expectedResultD);
   
