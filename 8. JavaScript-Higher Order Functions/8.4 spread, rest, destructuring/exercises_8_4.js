@@ -78,7 +78,19 @@ const bornInAustralia = (nationality) => nationality === "Australian";
 
 const filterPeople = (people) => people.filter(({bornIn, nationality}) => bornIn20Century(bornIn) && bornInAustralia(nationality));
 
-const filteredPeople = filterPeople(people)
+const filteredPeople = filterPeople(people);
 
 assert.deepStrictEqual(filteredPeople[0], { name: "Nicole", bornIn: 1992, nationality: "Australian" })
 assert.deepStrictEqual(filteredPeople[1], { name: "Toby", bornIn: 1901, nationality: "Australian" })
+
+//5 Escreva a função swap , que dado um array de 3 elementos, retorna um novo array com o primeiro e terceiro elementos trocados. Detalhe: você precisa fazer essa função gastando 1 linha só:
+const myList = [1, 2, 3];
+
+// escreva swap abaixo
+const swap = ([firstNumber, secondNumber, thirdNumber]) => [thirdNumber, secondNumber, firstNumber];
+
+const swappedList = swap(myList);
+
+assert.strictEqual(swappedList[0], 3);
+assert.strictEqual(swappedList[1], 2);
+assert.strictEqual(swappedList[2], 1);
