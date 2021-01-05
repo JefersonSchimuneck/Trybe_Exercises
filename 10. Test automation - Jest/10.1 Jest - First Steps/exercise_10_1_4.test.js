@@ -1,4 +1,4 @@
-const myFizzBuzz = require('./exercise_10_1_4');
+const myFizzBuzz = require('./exercise_10_1_4.js');
 
 describe('myFizzBuzz', () => {
   test('retorna `fizzbuzz` se o número for divisível por 3 e 5', () => {

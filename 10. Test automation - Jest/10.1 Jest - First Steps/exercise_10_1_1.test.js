@@ -1,4 +1,4 @@
-const sum = require('./exercise_10_1_1');
+const sum = require('./exercise_10_1_1.js');
 
 describe('sum', () => {
     test('4 + 5 = 9', () => {

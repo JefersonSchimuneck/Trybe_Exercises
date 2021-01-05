@@ -1,4 +1,4 @@
-const myRemove = require('./exercise_10_1_2');
+const myRemove = require('./exercise_10_1_2.js');
 
 describe('myRemove', () => {
   test('retorna novo array sem o item passado como parâmetro', () => {

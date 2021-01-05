@@ -1,4 +1,4 @@
-const myRemoveWithoutCopy = require('./exercise_10_1_3');
+const myRemoveWithoutCopy = require('./exercise_10_1_3.js');
 
 describe('myRemoveWithoutCopy', () => {
   test('retorna novo array sem o item passado como parâmetro', () => {
