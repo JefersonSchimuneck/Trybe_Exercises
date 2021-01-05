@@ -32,18 +32,40 @@ const getUserName = (userID) => {
 
 describe('test getUserName with promises', () => {
   describe('when ID exists', () => {
-    it('returns the user name', () => {
+    it('returns the name', () => {
       expect.assertions(1);
       return getUserName(4).then(data => expect(data).toEqual('Mark'));
     });
   });
 
   describe('when ID doesnt exist', () => {
-    it('returns an error', () => {
+    it('returns an error message', () => {
       expect.assertions(1);
       return getUserName(2).catch(error =>
         expect(error).toEqual({ error: 'User with 2 not found.' })
       );
+    });
+  });
+});
+
+//3
+describe('test getUserName with asyn/await', () => {
+  describe('when ID exists', () => {
+    it('returns the name', async () => {
+      expect.assertions(1);
+      const data = await getUserName(4);
+      expect(data).toEqual('Mark');
+    });
+  });
+
+  describe('when ID doesnt exist', () => {
+    it('returns an error message', async () => {
+      expect.assertions(1);
+      try {
+        await getUserName(1);
+      } catch (error) {
+        expect(error).toEqual({ error: 'User with 1 not found.' });
+      }
     });
   });
 });
