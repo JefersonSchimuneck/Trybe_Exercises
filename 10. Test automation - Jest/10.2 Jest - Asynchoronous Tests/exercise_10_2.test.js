@@ -81,7 +81,7 @@ const getRepos = (url) => {
     });
 }
 
-test('gets a list of repositories names', () => {
+test('list of repositories names', () => {
   const url = 'https://api.github.com/users/tryber/repos';
 
   return getRepos(url).then(result => {
@@ -89,3 +89,14 @@ test('gets a list of repositories names', () => {
     expect(result).toContain('hexo-theme-timeline');
   });
 });
+
+//5
+
+// 1 - beforeEach
+// 1 - test
+// 1 - afterEach
+// 1 - beforeEach
+// 2 - beforeEach
+// 2 - test
+// 2 - afterEach
+// 1 - afterEach
