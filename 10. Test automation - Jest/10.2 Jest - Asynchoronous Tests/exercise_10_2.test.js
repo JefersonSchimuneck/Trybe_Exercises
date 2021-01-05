@@ -69,3 +69,23 @@ describe('test getUserName with asyn/await', () => {
     });
   });
 });
+
+//4
+const fetch = require('node-fetch');
+
+const getRepos = (url) => {
+  return fetch(url)
+    .then(response => response.json())
+    .then((data) => {
+      return data.map((repo) => repo.name)
+    });
+}
+
+test('gets a list of repositories names', () => {
+  const url = 'https://api.github.com/users/tryber/repos';
+
+  return getRepos(url).then(result => {
+    expect(result).toContain('hackatrybe-covid');
+    expect(result).toContain('hexo-theme-timeline');
+  });
+});
