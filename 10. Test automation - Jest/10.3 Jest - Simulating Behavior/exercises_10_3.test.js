@@ -38,3 +38,14 @@ test ('Exercise 3 requirements', () => {
     expect(generateNumber).toHaveBeenCalledTimes(1);
     expect(generateNumber).toHaveBeenCalledWith(3);
 });
+
+//4
+const toUpperCase = (string) => string.toUpperCase();
+const firstCharacter = (string) =>  string.charAt(0);
+const concatString = (string1, string2) => string1.concat(string2);
+
+module.exports = {
+    toUpperCase,
+    firstCharacter,
+    concatString,
+  };
