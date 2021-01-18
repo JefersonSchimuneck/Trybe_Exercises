@@ -1,44 +1,62 @@
 import React from "react";
 import Pokemon from "./Pokemon";
-import pokeData from './data';
 
 class Pokedex extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      pokedexPosition: 0,
-      // pokedexFilter: '',
+      pokedexIndex: 0,
+      pokedexFilter: '',
     };
 
     this.handleNextClick = this.handleNextClick.bind(this);
-    // this.handleFilterClick = this.handleFilerClick.bind(this);
+    this.handleFilterClick = this.handleFilterClick.bind(this);
   }
 
   handleNextClick() {
-    let counter = this.state.pokedexPosition > pokeData.length - 2 ?
-    this.state.pokedexPosition = -1 : this.state.pokedexPosition;
+    let counter = this.state.pokedexIndex > this.filterPokemon().length -2 ?
+    this.state.pokedexIndex = -1 : this.state.pokedexIndex;
 
-    this.setState((posicaoAnterior, _props) => ({
+    this.setState((previousIndex, _props) => ({
       counter: counter,
-      pokedexPosition: posicaoAnterior.pokedexPosition + 1,
+      pokedexIndex: previousIndex.pokedexIndex + 1,
     }
     ));
   }
 
-  handleFilterClick() {
-//teste
+  handleFilterClick(event) {
+    this.setState({
+      pokedexIndex: 0,
+      pokedexFilter: event.target.innerText === 'All' ? '' : event.target.innerText});
+  }
+
+  getPokemon() {
+    const {pokemons} = this.props;
+    return pokemons;
+  }
+
+  filterPokemon() {
+    const { pokedexFilter } = this.state;
+    return this.getPokemon()
+    .filter(pokemon => pokemon.type.includes(pokedexFilter))
   }
 
   render() {
+    const { pokedexIndex } = this.state;
+    const pokeTypes = [...new Set(this.getPokemon().map(pokemons => pokemons.type))];
+    pokeTypes.push('All');
+
     return (
       <section>
         <div className="pokedex">
-          <Pokemon pokemon={this.props.pokemons[this.state.pokedexPosition]} />
+          {this.filterPokemon()
+            .map(pokemon => <Pokemon key={pokemon.id} pokemon={pokemon} />)[pokedexIndex]}
         </div>
-        <button onClick={this.handleNextClick}>Próximo Pokémon</button>
-        <button onClick={this.handleFilterClick}>Fire</button>
-        <button onClick={this.handleFilterClick}>Psychic</button>
+        <div className="typeButtons">
+          {pokeTypes.map(type => <button key={type} onClick={this.handleFilterClick}>{type}</button>)}
+        </div>
+        <button onClick={this.handleNextClick}>Next Pokémon</button>
       </section>
     );
   }
