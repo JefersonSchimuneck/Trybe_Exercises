@@ -2,6 +2,10 @@ import React from 'react';
 
 import { Redirect } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+
+import { login } from '../actions';
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -9,7 +13,7 @@ class Login extends React.Component {
     this.state = {
       email: '',
       password: '',
-      redirect: false,
+      redirect: undefined,
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,11 +26,11 @@ class Login extends React.Component {
   }
 
   handleClick = () => {
+    const { loginDispatch } = this.props;
     const { email, password } = this.state;
     this.setState({
-      redirect: !email || !password ? false : true,
+      redirect: (email && password) && loginDispatch(),
     })
-    
   }
 
   render() {
@@ -47,10 +51,18 @@ class Login extends React.Component {
           Password:
           <input name ="password" onChange={ this.handleChange } type="password" value={ password } />
         </label>
-        <button onClick = {() => this.handleClick() }type="button">Login</button>
+        <button onClick = {() => this.handleClick() } type="button">Login</button>
       </>
     )
   }
 }
 
-export default Login;
+const mapStateToProps = (state) => ({
+  loginState: state.loginReducer.login,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  loginDispatch: () => dispatch(login()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
