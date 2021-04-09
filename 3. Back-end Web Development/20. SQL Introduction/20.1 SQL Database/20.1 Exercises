@@ -1,0 +1,45 @@
+Exercícios de Fixação
+
+1. Quais constraints a coluna address_id poderia ter? Por quê?
+Primary Key para ter um número indentificador único. Esta key não permite que o dado seja nulo.
+
+2.A coluna city_id é um número. Você consegue identificar que tipo de constraint foi aplicado nela?
+Foreign Key
+
+3.A coluna address (endereço) possui uma constraint . Acredita que essa coluna possui informação que é relevante para a tabela? Se sim, qual tipo de constraint seria interessante ser aplicado a ela para que ela sempre tenha que possuir um valor?
+NOT NULL
+
+1. Que tipo de restrição está aplicado sobre city id?
+Primary Key
+
+2. Qual é o motivo da coluna country_id não possuir nomes de country (país)?
+Esta coluna possui Foreign Keys, para consultar o nome dos países seria necessário consultar a tabela que traz estes dados.
+
+1. Qual coluna possui uma Primary Key ?
+film_id
+
+2. Qual coluna possui uma Foreign Key ?
+category_id
+
+Exercícios Propostos
+
+1. Descubra como fazer uma pesquisa em qualquer tabela sem usar uma linha de código.
+Clicar com o botão direito na tabela do menu esquerdo e clicar na opção 'Select Rows - Limit 1000'
+
+2. Descubra como é possível criar uma tabela sem usar código SQL.
+Clicar com o botão direito e selecionar a opção 'Create Table...'
+
+3. Feito isso, crie a seguinte tabela com as seguintes restrições
+
+
+4. Analise a tabela city e encontre a tabela à qual a coluna country_id faz referência.
+country
+
+5. Depois de encontrada, responda: qual tipo de relacionamento a tabela city faz com a tabela country?
+N:1
+
+6. Qual tipo de relacionamento a tabela country faz com a tabela city?
+1:N
+
+7. Abra tabela por tabela do banco sakila e encontre no mínimo 3 exemplos de um relacionamento 1:N ou N:1 nesse banco de dados.
+store->staff, language->film, film->language
