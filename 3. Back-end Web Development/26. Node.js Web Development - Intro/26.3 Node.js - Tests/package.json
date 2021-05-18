@@ -1,0 +1,16 @@
+{
+  "name": "exercises-26-3",
+  "version": "1.0.0",
+  "description": "**Exercício 1** : Estruture os testes utilizando `mocha` e `chai` para um função que irá dizer se um número é \"positivo\", \"negativo\" ou \"neutro\":",
+  "main": "verifyNumber.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0",
+    "sinon": "^10.0.0"
+  }
+}
