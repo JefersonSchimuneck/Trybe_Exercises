@@ -10,15 +10,16 @@ function formatUser(document) {
 }
 
 const userSchema = Joi.object({
-  firstName: joi.string().required(),
-  lastName: joi.string().required(),
-  email: joi.string().email().required(),
-  password: joi.string().min(6).required(),
-}).messages({
-  'any.required': 'O campo {{: id="label" }} é obrigatório',
-  'string.min': 'O campo {{: id="label" }} deve ter pelo menos, {{: id= "limit" }} caracteres,',
-  'string.email': 'Informe um email válido no campo {{: id="label" }}',
-});
+  firstName: Joi.string().required(),
+  lastName: Joi.string().required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().min(6).required(),
+})
+// .messages({
+//   'any.required': 'O campo {{: id="label" }} é obrigatório',
+//   'string.min': 'O campo {{: id="label" }} deve ter pelo menos, {{: id= "limit" }} caracteres,',
+//   'string.email': 'Informe um email válido no campo {{: id="label" }}',
+// });
 
 
 
