@@ -1,0 +1,15 @@
+apps:
+  -name: app_a
+  script: ./indexA.js
+  exec_mode: cluster
+  instances: max
+  watch: true
+  max_memory_restart: 100M
+  -name: app_b
+  script: ./indexB.js
+  exec_mode: cluster
+  instances: 2
+  env_prod:
+    ENVIRONMENT: PRODUCTION
+  env_homolog:
+    ENVIRONMENT: HOMOLOG
